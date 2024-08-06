@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @font-face {
+            font-family: Jua;
+            src: url(../font/Jua/Jua-Regular.ttf);
+        }
+        @font-face {
+            font-family: Nanum_Pen_Script;
+            src: url(../font/Nanum_Pen_Script/NanumPenScript-Regular.ttf);
+        } 
+        body{
+            background-color: rgb(180, 255, 230);
+        }
+        header{
+            font-family: Jua;
+            text-align: center;
+            margin: 20px;
+        }
+        header>h1{
+            font-size: 60px;
+        }header>h3{
+            font-size: 30px;
+        }
+        .menu{
+            width: 300px;
+            background-color: white;
+            margin: 0 auto;
+            border-radius: 10px;
+            margin-bottom: 50px;
+        }
+        .menu>div:first-child{
+            width: 300px;
+            height: 200px;
+            background-color: aqua;
+            background-size: 300px, 200px;
+            border-radius: 10px 10px 0 0;
+        }
+        .menu>.image1{
+            background-image: url(../image/초밥.jpg);
+        }
+        .menu>.image2{
+            background-image: url(../image/chicken.jpg);
+        }
+        .menu>.image3{
+            background-image: url(../image/bibimbab.jpg);
+        }
+        .menu>.image4{
+            background-image: url(../image/hamburger.jpg);
+        }
+        .menu>.image5{
+            background-image: url(../image/초밥.jpg);
+        }
+        .menu>div:last-child{
+            font-family: Nanum_Pen_Script;
+            text-align: center;
+        }
+        .menu>div>h4{
+            font-size: 30px;
+        }
+        .menu>div>p:nth-of-type(1){
+            font-size: 17px;
+        }
+        .menu>div>p:nth-of-type(3){
+            color: blue;
+            font-weight: bold;
+            padding-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>배달의 민족</h1>
+        <h3>넌 배달할 때가 제일 멋있어</h3>
+    </header>
+    <!-- 여기서부터 메뉴 시작 -->
+     <div class="menu">
+        <div class="image1"></div>
+        <div>
+            <h4>맛있는 초밥</h4>
+            <p>주머니가 가벼운 당신의 마음까지 생각한 착한 가격!!</p>
+            <p><del>25,000원</del>   15,000원</p>
+            <p>바로결제</p>
+        </div>
+     </div>
+
+     <!-- 5개 복사 -->
+     <div class="menu">
+        <div class="image2"></div>
+        <div>
+            <h4>맛있는 치킨</h4>
+            <p>주머니가 가벼운 당신의 마음까지 생각한 착한 가격!!</p>
+            <p><del>25,000원</del>   15,000원</p>
+            <p>바로결제</p>
+        </div>
+     </div>
+     <div class="menu">
+        <div class="image3"></div>
+        <div>
+            <h4>맛있는 비빔밥</h4>
+            <p>주머니가 가벼운 당신의 마음까지 생각한 착한 가격!!</p>
+            <p><del>25,000원</del>   15,000원</p>
+            <p>바로결제</p>
+        </div>
+     </div>
+     <div class="menu">
+        <div class="image4"></div>
+        <div>
+            <h4>맛있는 햄버거</h4>
+            <p>주머니가 가벼운 당신의 마음까지 생각한 착한 가격!!</p>
+            <p><del>25,000원</del>   15,000원</p>
+            <p>바로결제</p>
+        </div>
+     </div>
+     <div class="menu">
+        <div class="image5"></div>
+        <div>
+            <h4>맛있는 초밥</h4>
+            <p>주머니가 가벼운 당신의 마음까지 생각한 착한 가격!!</p>
+            <p><del>25,000원</del>   15,000원</p>
+            <p>바로결제</p>
+        </div>
+     </div>
+</body>
+</html>

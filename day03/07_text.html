@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 
+    text 속성
+    - text-align : 정렬 left, right, center, justify(양쪽)
+    - text-indent : 들여쓰기
+    - text-decoration : 선긋기
+        none : 없음.
+        underline : 밑줄
+        overline : 윗줄
+        line-through : 가운데줄
+    - text-shadow : 글자 그림자
+        - 좌측px 상단px 번짐정도px 색상
+        - 중첩가능(멀티가능), (,) 콤마로 계속 이어나갈 수 있음.
+    - letter-spacing : 글자간 간격
+    - word-spacing : 단어간 간격
+    - line-height : 글자 기준 높이 
+    - white-space : 컨텐츠 감싸기 방법
+        - wrap : 여러줄 만들기
+        - nowrap : 한줄로 처리
+    - text-overflow : 텍스트가 범위를 넘어가는 경우 처리
+        - ellipsis : 넘어가는 부분의 단위를 ...으로 처리
+    - overflow : 요소가 넘어가면 어떻게 처리할지 결정
+        - hidden : 숨김
+        - scroll : 스크롤바 생성
+        - auto : 스크롤 오토 생성
+    -->
+    <!-- 
+    css 표준단위
+    px : 픽셀
+    % : 퍼센트 현재 값을 기준으로 %
+    em : 배수, 부모값을 기준으로 배수
+    rem : 배수, 문서의 값을 기준으로 배수
+    cm/mm/in => 각 단위
+    pt : 포인터  1pt => 1/72 in
+    pc : 피카소 1pc => 12pt
+    deg : 각도 
+    -->
+    <style>
+        p{
+            text-indent: 20px;
+            text-align: justify;
+            /* word-spacing: 20px;
+            letter-spacing: 5px; */
+        }
+        .line{
+            width: 300px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+    </style>
+</head>
+<body>
+    <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi et dolor sagittis, viverra nisi non, tincidunt neque. Duis eleifend orci massa, nec vehicula felis rutrum eu. Praesent sollicitudin urna vulputate nunc egestas mollis. Proin vitae odio facilisis, molestie enim vel, molestie ipsum. Nulla in libero sit amet urna laoreet dignissim id ut turpis. Curabitur rutrum consequat tellus in vulputate. Mauris finibus facilisis turpis ac tristique. Sed eget auctor mi. Aliquam vel erat eget tellus imperdiet hendrerit ut at ante. Nam vitae laoreet nunc, sit amet feugiat arcu. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Proin ac metus ultricies, auctor mi id, hendrerit nibh. Cras ultricies sapien ac libero porta, sit amet lobortis tortor lacinia. Vestibulum malesuada augue dui, ut euismod purus porttitor nec. Nam leo ipsum, pulvinar vel dolor a, suscipit rutrum sapien.
+    </p>
+    <p class="line">
+        Mauris nec dictum est, condimentum tempus est. Ut vehicula quis arcu quis porta. Nullam id vehicula nulla. Maecenas odio augue, volutpat ut justo ut, posuere aliquam metus. Vestibulum dictum velit sed mattis eleifend. Nulla risus justo, porttitor eu tempor nec, mollis eget quam. Morbi congue eu orci eu pellentesque. Sed ultrices magna eu fermentum tristique. Etiam tristique magna at dolor malesuada placerat. Nulla condimentum a tellus at luctus. Vivamus elit erat, imperdiet sit amet libero sed, aliquet tristique magna. In mattis sollicitudin egestas. Aenean tellus risus, vestibulum eget ex vitae, semper pellentesque lectus. Aenean tincidunt ullamcorper ligula in congue.
+    </p>
+</body>
+</html>
