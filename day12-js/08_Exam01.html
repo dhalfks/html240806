@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+    <!-- 구구단 문제 -->
+     <h1>
+        <button type="button" id="startBtn">문제출제</button>
+     </h1>
+     <ol id="q"></ol>
+     <h1>
+        <button type="button" id="compareBtn">정답확인</button>
+     </h1>
+     <h3 id="printRatio"></h3>
+
+     <script>
+        //input.style.backgroundColor = 'green'
+        //style을 객체의 속성으로 줄 때 camelCase로 변경하여 속성을 줌.
+        //정답 Object ans1 ans2 ... 
+        const ansObj = {}; //정답을 담을 객체
+        //ansObj[`ans${i}`] = dan * incre;
+        let quizArea = document.getElementById('q');
+        let count=0; //전체개수
+        let correct = 0; //정답개수
+
+        document.getElementById('compareBtn').addEventListener('click',()=>{
+            correct=0;
+            count=0;
+            
+            while(count < 10){
+                count++;
+                // let userInput = document.getElementById(`userAns${count}`);
+                let userInput = document.getElementById('userAns'+count);
+                if(userInput.value == ansObj[`ans${count}`]){
+                    correct++;
+                    userInput.value += " : 정답!!";
+                    userInput.style.backgroundColor = 'green';
+                }else{
+                    userInput.value += " : 오답!!";
+                    userInput.style.backgroundColor = 'red';
+                }
+            }
+            document.getElementById('printRatio').innerText = 
+            `정답갯수 : ${correct}, 정답률 : ${(correct/count).toFixed(2)*100}%`;
+        });
+
+        document.getElementById('startBtn').addEventListener('click',()=>{
+            count=0;
+            document.getElementById('printRatio').innerText = "";
+            let q = '';
+            do{
+                count++;
+                let dan = Math.floor(Math.random()*8)+2;
+                let incre = Math.floor(Math.random()*9)+1;
+                let answer = dan * incre;
+                ansObj[`ans${count}`] = answer;  //object에 정답 추가
+                //값 뿌리기
+                 q+= `<li>${dan} * ${incre} = <input type="text" id="userAns${count}"> </li>`; 
+            }while(count < 10);
+            quizArea.innerHTML = q;
+            console.log(ansObj);
+        });
+
+     </script>
+
+</body>
+</html>
