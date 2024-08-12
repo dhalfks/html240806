@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>
+        <button id="random">랜덤 숫자 생성 버튼(1~99)</button>
+        <button id="new">다시시도</button>
+    </h1>
+    <h3 id="printMsg"></h3>
+    <h1>
+        <input type="number" min="1" max="99" id="myNum">
+        <button id="compareNum">정답~!!</button>
+    </h1>
+    <h3 id="result"></h3>
+
+    <script>
+        let comNum = 0;
+        let count = 0;
+
+        document.getElementById('compareNum').addEventListener('click',()=>{
+            let myNum = document.getElementById('myNum').value;
+            count++;
+            let str='';
+
+            //1~99사이가 아니여도 입력가능
+            if(myNum > 1 && myNum < 100){
+                //실행
+                if(comNum == myNum){
+                    str = `시도횟수 ${count}, 정답입니다. ${comNum}였습니다.`;
+                }else if(comNum > myNum) {
+                    str = `시도횟수 ${count}, UP!! \n`;
+                }else{
+                    str = `시도횟수 ${count}, DOWN!! \n`;
+                }
+            }else{
+                str='1~99사이의 숫자만 가능합니다.';
+            }
+            document.getElementById('result').innerText = str;
+        })
+
+        document.getElementById('new').addEventListener('click',()=>{
+            window.location.reload();  //window는 생략가능. 
+        })
+
+        document.getElementById('random').addEventListener('click',()=>{
+            comNum = Math.floor(Math.random()*99)+1;
+            document.getElementById('printMsg').innerText = 
+            '컴퓨터가 랜덤수(1~99)를 생성했습니다.';
+            console.log(comNum);
+        });
+
+    </script>
+
+</body>
+</html>
