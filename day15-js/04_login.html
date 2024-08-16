@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: beige;
+        }
+        .container{
+            width: 300px;
+            background-color: bisque;
+            /* 화면 정중앙 배치 */
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            border-radius: 10px;
+            padding: 20px 30px;
+        }
+        .container .text-field, .btn{
+            width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+            margin-bottom: 10px;
+            border: none;
+            outline: none;
+            border-radius: 5px;
+            font-size: 15px;
+        }
+        .container .btn{
+            /* background-color: rgb(245, 173, 86); */
+            background-color: rgb(242, 197, 143);
+            color: rgb(255, 255, 255);
+            font-weight: 700;
+            cursor: pointer;
+        }
+        .container .link{
+            margin-top: 30px;
+        }
+        .container .link>a{
+            color: rgb(141, 141, 141);
+            text-decoration: none;
+            font-size: 13px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form action="">
+            <input type="text" class="text-field" name="id" placeholder="아이디 8자이상">
+            <input type="password" class="text-field" name="pw" placeholder="비밀번호">
+            <input type="submit" class="btn" value="login" disabled>
+        </form>
+        <div class="link">
+            <a href="">비밀번호를 잊어버리셨나요</a>
+        </div>
+    </div>
+    
+
+    <script>
+        //id규칙 8자 이상
+        //pw규칙 숫자, 문자, 특수문자 포함 8자이상
+        //^(?=.*[A-Za-z])(?=.*\d)(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*]{8,}$
+        const input = document.querySelectorAll('.text-field');
+        const btn = document.querySelector('.btn');
+        console.log(input);
+        console.log(btn);
+        input[0].addEventListener('input',()=>{
+            console.log("1111")
+             //id규칙 8자 이상
+             let pwVaild = passwordValid();
+             if(input[0].value.length > 7 && pwVaild){
+                btn.style.setProperty('background-color', 'rgb(245, 173, 86)');
+                btn.disabled = false;
+             }else{
+                btn.style.setProperty('background-color', ' rgb(242, 197, 143)');
+                btn.disabled = true;
+             }
+        });
+
+        function passwordValid(){
+            let reg = new RegExp(/^(?=.*[A-Za-z])(?=.*\d)(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*]{8,}$/);
+            console.log(input[1].value, reg.test(input[1].value));
+            if(reg.test(input[1].value)){
+                return true;
+            }
+            return false;
+
+        }
+        input[1].addEventListener('input', ()=>{
+            let pwVaild = passwordValid();
+            if(input[0].value.length > 7 && pwVaild){
+                btn.style.setProperty('background-color', 'rgb(245, 173, 86)');
+                btn.disabled = false;
+             }else{
+                btn.style.setProperty('background-color', ' rgb(242, 197, 143)');
+                btn.disabled = true;
+             }
+        });
+    </script>
+</body>
+</html>
